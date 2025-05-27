@@ -1,20 +1,14 @@
-#ifndef SHA256_AVX512_H
-#define SHA256_AVX512_H
+#ifndef SHA256_AVX2_H
+#define SHA256_AVX2_H
 
 #include <cstdint>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+void sha256avx2_8B(
+    const uint8_t* data0, const uint8_t* data1, const uint8_t* data2, const uint8_t* data3,
+    const uint8_t* data4, const uint8_t* data5, const uint8_t* data6, const uint8_t* data7,
+    unsigned char* hash0, unsigned char* hash1, unsigned char* hash2, unsigned char* hash3,
+    unsigned char* hash4, unsigned char* hash5, unsigned char* hash6, unsigned char* hash7
+);
 
-// Przetwarza 16 bloków danych (każdy 64 bajty) równocześnie,
-// wynik to 16 hashy po 32 bajty.
-// data - tablica 16 wskaźników do bloków wejściowych
-// out_hashes - tablica 16 wskaźników do 32-bajtowych buforów wyjściowych
-void sha256_avx512_16blocks(const uint8_t* data[16], uint8_t* out_hashes[16]);
+#endif // SHA256_AVX2_H
 
-#ifdef __cplusplus
-}
-#endif
-
-#endif // SHA256_AVX512_H
