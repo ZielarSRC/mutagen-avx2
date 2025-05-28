@@ -1,5 +1,7 @@
-#ifndef INTH
-#define INTH
+// Big integer class (Fixed size)
+
+#ifndef BIGINTH
+#define BIGINTH
 
 #include <string>
 #include <inttypes.h>
@@ -392,4 +394,4 @@ static inline int isStrictGreater128(uint64_t h1,uint64_t l1,uint64_t h2,uint64_
   return 0;
 }
 
-#endif // INTH
+#endif // BIGINTH
